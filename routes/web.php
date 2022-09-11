@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -104,6 +105,10 @@ Route::get('/dashboard', function(){
  
  
  Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+ Route::prefix('admin/category')->name('admin.category.')->group(function(){
+    Route::get('index',[AdminCategoryController::class,'index'])->name('index');
+ });
  
 
 //  cart
@@ -117,7 +122,7 @@ Route::get('/cart',[ProductController::class,'cart'])->name('cart')->middleware(
 Route::get('/add-to-cart/{id}',[ProductController::class,'addToCart'])->name('add.to.cart')->middleware('auth');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart')->middleware('auth');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart')->middleware('auth');
-Route::get('/store',[ProductController::class,'store'])->name('store')->middleware('auth');
+Route::post('/store',[ProductController::class,'store'])->name('store')->middleware('auth');
 
 
 
