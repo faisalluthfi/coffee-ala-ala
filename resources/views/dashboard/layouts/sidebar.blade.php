@@ -8,9 +8,15 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link {{Request::is('dashboard/posts*') ? 'active' : ''}}" href="{{route('admin.category.index')}}">
+            <span data-feather="file-text"></span>
+            Categories
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link {{Request::is('dashboard/posts*') ? 'active' : ''}}" href="/dashboard/posts">
             <span data-feather="file-text"></span>
-            My Post
+            Products
           </a>
         </li>
       </ul>

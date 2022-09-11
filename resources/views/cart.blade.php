@@ -3,6 +3,8 @@
 
 
 @section('content')
+<form action=/store method="POST" enctype="multipart/form-data">
+    @csrf
 <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -19,7 +21,7 @@
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
                 @php $total += $details['price'] * $details['quantity'] @endphp
-                <form action="/store">
+                <input type="hidden" name="product_id" value="{{$details['id']}}">
                 <tr data-id="{{ $id }}">
                     <td data-th="Product">
                         <div class="row">
@@ -31,7 +33,7 @@
                     </td>
                     <td data-th="Price">${{ $details['price'] }}</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" name="quantity"/>
                     </td>
                     <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
                     <td class="actions" data-th="">
@@ -50,19 +52,19 @@
         <tr>
             <td colspan="5" class="text-right">
                 <a href="/products" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                <form action=/store method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" value="{{ $details['name'] }}" name="name"> 
-                    <input type="hidden" value="{{ $details['quantity'] }}" name="quantity"> 
-                    <input type="hidden" value="{{ $details['price'] }}" name="price"> 
-                    <input type="hidden" value="{{ $details['image'] }}" name="image"> 
+               
+                    {{-- <input type="text" value="{{ $details['name'] }}" name="name"> 
+                    <input type="text" value="{{ $details['quantity'] }}" name="quantity"> 
+                    <input type="text" value="{{ $details['price'] }}" name="price"> 
+                    <input type="text" value="{{ $details['image'] }}" name="image">  --}}
                     <button class="btn btn-success" type="submit">Checkout</button>
-                </form>
+                
                 
             </td>
         </tr>
     </tfoot>
 </table>
+</form>
 @endsection
   
 @section('scripts')

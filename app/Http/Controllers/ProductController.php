@@ -39,11 +39,12 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
           
         $cart = session()->get('cart', []);
-  
+        // dd($cart);
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
+                "id" => $product->id,
                 "name" => $product->name,
                 "quantity" => 1,
                 "price" => $product->price,
@@ -79,18 +80,45 @@ class ProductController extends Controller
         }
     }
 
-    public function store($cart)
+    public function store(Request $request)
     {
-         $validated =$cart->validate([
-                    'name' => 'required',
-                    'quantity' => 'required',
-                    'price' => 'required',
-                    'image' => 'required',
+        //  $request->validate([
+        //             'name' => 'required',
+        //             'quantity' => 'required',
+        //             'price' => 'required',
+        //             'image' => 'required',
 
-                ]);
-                dd($validated);
+        //         ]);
+                // dd($request->all());
+                // dd(auth()->user());
+                $cart = session()->get('cart');
+                // dd($cart);
+
+                foreach ($cart as $pesanan){
+                    // dd($pesanan);
+
+                    $product= Product::find($pesanan['id']);
+                    $pesanan2 = Pesanan::where('user_id',auth()->user()->id)->where('product_id',$product->id)->first();
+                    if($pesanan2 != null){
+                        $pesanan2->update([
+                            "quantity" => $pesanan['quantity'],
+                            "total"=> $product->price*$pesanan['quantity']
+                        ]);
+                    }else{
+                   
+                    Pesanan::create([
+                        "user_id" => auth()->user()->id,
+                        "product_id"=> $product->id,
+                        "name" => $product->name,
+                        "quantity"=> $pesanan['quantity'],
+                        "price"=> $product->price,
+                        "total"=> $product->price*$pesanan['quantity']
+                    ]);
+                    }
+                }
+                // dd($product);
         
-        return redirect('/product')->with('success', 'Berhasil Checkout');
+        return redirect('/products')->with('success', 'Berhasil Checkout');
     }
     
 }
