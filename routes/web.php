@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -62,6 +63,16 @@ Route::get('/categories',function(){
     ]);
 });
 
+
+Route::get('/test',function(){
+    return view('test',[
+        'title'=> 'test product',
+        'products'=> Product::all(),
+        'categories'=> Category::all()
+    ]);
+});
+
+
 Route::get('/categories/{category:slug}',function(Category $category){
     return view('categories',[
         'title' => $category->name,
@@ -98,18 +109,39 @@ Route::get('/dashboard', function(){
     return view('dashboard.index');
  })->middleware('admin');
 
- Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+ 
 
- Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+ Route::resource('/dashboard/products', AdminProductController::class)->middleware('admin');
  //resource controller yaitu sebuah controller yang sudah otomatis mengatur data crud 
  
  
- Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+//  Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
+//  Route::get('/dashboard/product/checkSlug',[AdminProductController::class,'checkSlug'])->middleware('admin');
+
+ Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
  Route::prefix('admin/category')->name('admin.category.')->group(function(){
     Route::get('index',[AdminCategoryController::class,'index'])->name('index');
- });
- 
+    Route::get('create',[AdminCategoryController::class,'create'])->name('create');
+    Route::post('store',[AdminCategoryController::class,'store'])->name('store');
+    Route::get('edit/{id}',[AdminCategoryController::class,'edit'])->name('edit');
+    Route::delete('destroy/{id}',[AdminCategoryController::class,'destroy'])->name('destroy');
+    Route::get('checkSlug', [AdminCategoryController::class, 'checkSlug']);
+});
+
+Route::prefix('admin/product')->name('admin.product.')->group(function(){
+    Route::get('index',[AdminProductController::class,'index'])->name('index');
+    Route::get('create',[AdminProductController::class,'create'])->name('create');
+    Route::post('store',[AdminProductController::class,'store'])->name('store');
+    Route::get('edit/{id}',[AdminProductController::class,'edit'])->name('edit');
+    Route::get('show/{id}',[AdminProductController::class,'show'])->name('show');
+    Route::patch('update/{id}',[AdminProductController::class,'update'])->name('update');
+    Route::delete('destroy/{id}',[AdminProductController::class,'destroy'])->name('destroy');
+    Route::get('checkSlug', [AdminProductController::class, 'checkSlug']);
+    
+});
+
+
 
 //  cart
 // Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
@@ -127,8 +159,8 @@ Route::post('/store',[ProductController::class,'store'])->name('store')->middlew
 
 
 
-Route::get('/test',function(){
-    return view('test',[
-        "title"=> 'test'
-    ]);
-});
+// Route::get('/test',function(){
+//     return view('test',[
+//         "title"=> 'test'
+//     ]);
+// });

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@400;700&family=Viga&display=swap" rel="stylesheet">
 
     {{-- my css --}}
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     
     {{-- iconbootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -32,8 +32,13 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     {{-- end fav icon --}}
     {{-- feather icons --}}
-    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {{-- slider scss --}}
+    <link rel="stylesheet" href="{{asset('slider.scss')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -75,7 +80,7 @@
       @yield('container')
     </div>
 
-    <div class="container">
+    <div style="background-color: white; margin-top: -50px" >
       @yield('detail')
     </div>
 
@@ -104,7 +109,7 @@
     {{-- end swiper --}}
 
     {{-- my script --}}
-    <script src="js/script.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 
     {{-- feather icons --}}
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>

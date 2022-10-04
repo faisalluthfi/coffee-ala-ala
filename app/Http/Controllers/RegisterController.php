@@ -16,9 +16,12 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function store(Request $request){
-        $validateData = $request->validate([
+    public function store(Request $request)
+    {
+        //
+       $validateData = $request->validate([
             'name' => 'required|max:255',
+            'username' => ['required','min:3','max:255','unique:users'],
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
         ]);
@@ -26,10 +29,6 @@ class RegisterController extends Controller
         // $validateData['password'] = bcrypt($validateData['password']);
         $validateData['password'] = Hash::make($validateData['password']);
        User::create($validateData);
-
-    //  $request->session()->flash('success', 'Registartion Succes!, You can login Right now!');
-
-
-       return redirect('/login')->with('success', 'Registartion Succes!, You can login Right now!');
+        return redirect('/register')->with('success','You can loggin right now!');
     }
 }

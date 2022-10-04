@@ -11,6 +11,8 @@ use App\Models\Pesanan;
 class ProductController extends Controller
 {
     public function index(){
+
+        
         return view('products',[
             "title" => 'All Produk',
             "products" => Product::with('category')->get(),
@@ -18,6 +20,10 @@ class ProductController extends Controller
             // 'coffee' => $coffee,
         ]);
     } 
+
+    // public function cari(Request $request){
+    //     $cari 
+    // }
 
     public function cart()
     {
@@ -30,7 +36,8 @@ class ProductController extends Controller
         return view('product',[
             "title"=>$product->name,
             'product' => $product,
-            "category"=> Category::all()
+            "category"=> Category::all(),
+            "products"=> Product::all()
         ]);
     }
 
@@ -109,6 +116,7 @@ class ProductController extends Controller
                     Pesanan::create([
                         "user_id" => auth()->user()->id,
                         "product_id"=> $product->id,
+                        "image" => $product->image,
                         "name" => $product->name,
                         "quantity"=> $pesanan['quantity'],
                         "price"=> $product->price,

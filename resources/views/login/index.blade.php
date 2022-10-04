@@ -2,48 +2,7 @@
 
 
 @section('full')
-{{-- <div class="row justify-content-center">
-    <div class="col-md-5">
-      @if(session()->has('success'))
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{session('success')}}
-         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      @endif
 
-      @if(session()->has('loginError'))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{session('loginError')}}
-         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      @endif
-
-        <main class="form-signin">
-            <h1 class="h3 mb-3 fw-normal text-center">Please Login</h1>
-            <form action="/login" method="post">
-              @csrf
-              <div class="form-floating">
-                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{old('email')}}">
-                <label for="email">Email address</label>
-                @error('email')
-                <div class="invalid-feedback">
-                  {{$message}}
-                </div>
-                @enderror
-              </div>
-              <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                <label for="password">Password</label>
-              </div>
-          
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-            </form>
-            <small class="d-block text-center mt-3">
-                Not Registered? <a href="/register">Register Now!</a>
-            </small>
-          </main>
-    </div>
-</div>  --}}
 
 <div class="row justify-content-center">
   <div class="col-md-5 error">
@@ -66,7 +25,7 @@
 
 <section id="login-page">
   <div class="login">
-<div class="wave">
+{{-- <div class="wave">
   <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
     .path-0{
       animation:pathAnim-0 4s;
@@ -112,7 +71,7 @@
         d: path("M 0,400 C 0,400 0,266 0,266 C 71.11004784688996,248.48803827751198 142.2200956937799,230.97607655502392 248,231 C 353.7799043062201,231.02392344497608 494.22966507177046,248.58373205741628 593,252 C 691.7703349282295,255.41626794258372 748.8612440191388,244.68899521531102 828,235 C 907.1387559808612,225.31100478468898 1008.3253588516745,216.6602870813397 1114,222 C 1219.6746411483255,227.3397129186603 1329.8373205741627,246.66985645933016 1440,266 C 1440,266 1440,400 1440,400 Z");
       }
     }</style><defs><linearGradient id="gradient" x1="0%" y1="56%" x2="100%" y2="44%"><stop offset="5%" stop-color="#a99981"></stop><stop offset="95%" stop-color="#ff6900"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,266 0,266 C 71.11004784688996,248.48803827751198 142.2200956937799,230.97607655502392 248,231 C 353.7799043062201,231.02392344497608 494.22966507177046,248.58373205741628 593,252 C 691.7703349282295,255.41626794258372 748.8612440191388,244.68899521531102 828,235 C 907.1387559808612,225.31100478468898 1008.3253588516745,216.6602870813397 1114,222 C 1219.6746411483255,227.3397129186603 1329.8373205741627,246.66985645933016 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
-</div>
+</div> --}}
 <div class="container-login-page">
   <div class="img">
     <img src="assets/images/getting.svg">
@@ -139,6 +98,7 @@
                </div>
             </div>
             <a href="#" class="forgot">Forgot Password?</a>
+             <p>Dont have account?</p></p><a href="/register" class="text-decoration-none">Sign Up</a>
             <input type="submit" class="btn-login" value="Login">
           </form>
       </div>

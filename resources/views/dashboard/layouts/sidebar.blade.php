@@ -8,14 +8,14 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{Request::is('dashboard/posts*') ? 'active' : ''}}" href="{{route('admin.category.index')}}">
+          <a class="nav-link {{Request::is('dashboard/categoy*') ? 'active' : ''}}" href={{route('admin.category.index')}}>
             <span data-feather="file-text"></span>
             Categories
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{Request::is('dashboard/posts*') ? 'active' : ''}}" href="/dashboard/posts">
-            <span data-feather="file-text"></span>
+          <a class="nav-link {{Request::is('dashboard/category*') ? 'active' : ''}}" href="/dashboard/products/">
+            <span data-feather="coffee"></span>
             Products
           </a>
         </li>

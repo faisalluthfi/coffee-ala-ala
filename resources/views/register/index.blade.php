@@ -18,7 +18,17 @@
                 </div>
               </div>
               @enderror
-           
+
+              <div class="form-floating">
+                <input type="username" name="username" class="form-control @error('username') is-invalid @enderror" id="Username" placeholder="Username" required value="{{old('username')}}">
+                <label for="username">Username</label>
+                @error('username')
+                <div class="invalid-feedback">
+                  {{$message}}
+                </div>
+              </div>
+              @enderror
+              </div>
 
               <div class="form-floating">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Name@example.com" required value="{{old('email')}}">
@@ -29,7 +39,7 @@
                 </div>
               </div>
               @enderror
-          
+              </div>
 
               <div class="form-floating">
                 <input type="password" name="password" class="form-control rounded-bottom @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
@@ -39,6 +49,7 @@
                   {{$message}}
                 </div>
               @enderror
+              </div>
          
           
               <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>

@@ -239,6 +239,198 @@ body{
 
 /* Detail Product */
 
+
+.detail-product{
+    margin-top: 50px;
+}
+
+.detail-product img{
+    /* border:2px solid #fff; */
+    box-shadow: 10px 10px 5px #212529;
+      -moz-box-shadow: 10px 10px 5px #212529;
+      -webkit-box-shadow: 10px 10px 5px #212529;
+      -khtml-box-shadow: 10px 10px 5px #212529;
+    
+}
+.detail-tulisan{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.price{
+    color: #212529;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.other-product{
+  position: relative;
+}
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* button checkout */
+@media (hover: hover) {
+    #creditcard {
+      /*  set start position */
+      transform: translateY(110px);
+      transition: transform 0.1s ease-in-out;
+      /*  set transition for mouse enter & exit */
+    }
+  
+    #money {
+      /*  set start position */
+      transform: translateY(180px);
+      transition: transform 0.1s ease-in-out;
+      /*  set transition for mouse enter & exit */
+    }
+  
+    button:hover #creditcard {
+      transform: translateY(0px);
+      transition: transform 0.2s ease-in-out;
+      /*  overide transition for mouse enter */
+    }
+  
+    button:hover #money {
+      transform: translateY(0px);
+      transition: transform 0.3s ease-in-out;
+      /*  overide transition for mouse enter */
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.25rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .button:hover .button__text span {
+    transform: translateY(-0.25rem);
+    transition: transform .2s ease-in-out;
+  }
+  
+  /* styling */
+  
+  @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+  
+  
+  
+  .button__checkout {
+    
+    border: none;
+    outline: none;
+    background-color: purple;
+    padding: 0.7rem 80px 0.7rem 1.7rem;
+    position: relative;
+    border-radius: 8px;
+    letter-spacing: 0.7px;
+    background-color: #212529;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+  }
+  
+  .button__checkout:active {
+    transform: translateY(1px);
+  }
+  
+  .button__svg {
+    position: absolute;
+    overflow: visible;
+    bottom: 6px;
+    right: 0.2rem;
+    height: 140%;
+  }
+/* end button checkouut */
+
+
+/* button continue */
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #212529;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+.btn-5 {
+    background: #212529;    
+    color: #fff;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-5:hover {
+    background: transparent;
+    color: #000;
+     box-shadow:
+     
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #000;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+/* end button continue */
+
 /* end detail product */
 
 /* DEKSTOP VERSION */
@@ -380,10 +572,14 @@ body{
         padding-left: 10px;
         padding-right: 10px;
     }
-    
+/*     \
     .login{
         width: 20%;
-    }
+    } */
+    
+    /* #login-page{
+        
+    } */
   }
 
 
