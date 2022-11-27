@@ -46,34 +46,6 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#a99981" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,181.3C384,192,480,224,576,240C672,256,768,256,864,229.3C960,203,1056,149,1152,117.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
   </div> --}}
 </section> 
-@endsection 
-@section('container') 
-<section>
-  <div class="row menus mt-5">
-    <div class="col-lg-12 line-menu">
-      <h1 class="text-center">Our Menu</h1>
-    </div>
-  </div>
-  <div class="swiper mySwiper mt-4 mb-5">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="assets/images/1.jpg" width="650x" height="850px" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/images/2.jpg" width="650x" height="850px"/>
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/images/3.jpg" width="650x" height="850px" />
-      </div>
-   
-
-
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
 
 
 

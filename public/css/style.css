@@ -524,21 +524,9 @@ body{
 @media (min-width: 320px) and (max-width: 480px) {
   
     /* CSS */
-    .swiper-slide img{
-        width:100%;
-        height: auto;
+    .cart{
+      width: 10%;
     }
-
-    .swiper-button-next{
-        display: none;
-        visibility: hidden;
-    }
-
-    .swiper-button-prev{
-        display: none;
-        visibility: hidden;
-    }
-    
 
      
     .info-panel h4{

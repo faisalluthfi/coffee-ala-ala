@@ -28,10 +28,11 @@ class DatabaseSeeder extends Seeder
         User::factory(3)->create();
 
         User::create([
-            'name' => 'Faisal Luthfi',
-            'username' => 'faisalluthfi',
-            'email' => 'faisalluthfi05@gmail.com',
-            'password'=> bcrypt('unpam123')
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password'=> bcrypt('unpam123'),
+            'is_admin' => 1
         ]);
 
         About::create([
@@ -51,7 +52,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "slug"=>"ala-ala-coffee-ala",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 25500,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -59,7 +60,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 5,
             "slug"=>"raspberry",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 22000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -67,7 +68,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "slug"=>"ala-ala-americano",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 27000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -75,7 +76,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "slug"=>"ala-ala-espresso",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 26000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -83,7 +84,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 2,
             "slug"=>"lemon-tea",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 15000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -91,7 +92,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => 2,
             "slug"=>"reguler-tea",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 10000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -107,7 +108,7 @@ class DatabaseSeeder extends Seeder
             "category_id" => "3",
             "slug"=>"smashed-chicken",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 28000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
         Product::create([
@@ -115,16 +116,16 @@ class DatabaseSeeder extends Seeder
             "category_id" => 4,
             "slug"=>"french-fries",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
-            "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate.",
-            'image' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=989&q=80'
+            "price" => 20000,
+            "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
+            
         ]);
         Product::create([
             "name"=> "Dim Sum",
             "category_id" => 4,
             "slug"=>"dim-sum",
             "excertp" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione facilis laudantium?",
-            "price" => 25000,
+            "price" => 20000,
             "description" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, fuga accusantium? Deleniti unde quod, quia aliquid commodi deserunt, maiores enim autem doloribus a, repudiandae cupiditate."
         ]);
 

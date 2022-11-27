@@ -26,6 +26,7 @@
         </div>
         <p class="price">Rp. {{ $product->price }}</p>
         <p>{{ $product->description }}</p>
+        <a href="{{ route('add.to.cart', $product->id) }}">
         <button class="button__checkout">
           <span class="button__text">
             <span>C</span><span>h</span>e</span><span>c</span><span>k</span><span>
@@ -73,68 +74,12 @@
 
           </svg>
         </button>
-        <div class="frame mt-3 rounded">
-          <button class="custom-btn btn-5"><span>Read More</span></button>
-        </div>
+      </a>
       </div>
     </div>
   </div>
   
 
-  <div class="col-lg-12 line-menu mb-4">
-      <h1 class="text-center">Other Menu</h1>
-  </div>
 
-  <section class="other-product">
-    <div class="container">
-      <div class="row">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            @foreach ($products as $product)
-            
-              <div class="col-md-4 mb-2">
-                <div class="card" >
-                  <div class="position-absolute bg-dark p-3 py-2 text-white" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/categories/{{$product->category->slug}}" class="text-white text-decoration-none">{{$product->category->name}}</a></div>
-                  @if ($product->image)
-                    <div style="max-height: 350px; overflow:hidden;">
-                        <img src="{{url($product->image)}}" alt="{{$product->category->name}}" class="img-fluid">      
-                    </div>
-                  @else
-                  <img src="https://source.unsplash.com/500x400?{{$product->category->name}}" class="card-img-top" alt="{{$product->category->name}}">
-                  @endif
-                  <div class="card-body">
-                    <h5 class="card-title text-decoration-none"><a href="/products/{{$product->name}}"  class="text-decoration-none text-dark">{{ $product->name }}</a></h5>
-                    <p class="card-text">{{ $product->excerpt }}</p>
-                    <p class="card-text">Rp.{{ $product->price }}</p>
-                    <p class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
-                  </div>
-                </div>
-              </div>
-            @endforeach
-           
-         </div>
-         <div class="swiper-button-next"></div>
-         <div class="swiper-button-prev"></div>
-         <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-  </script>
+  
 @endsection

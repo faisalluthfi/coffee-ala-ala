@@ -108,8 +108,5 @@ class AdminCategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success', 'category has been deleted!');
     }
 
-    public function checkSlug(Request $request){
-        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
-        return response()->json(['slug' => $slug]);
-    }
+    
 }

@@ -24,6 +24,14 @@ class AdminProductController extends Controller
             "products"=> Product::all()
         ]);
     }
+
+    public function cari(Request $request){
+        $cari = $request->cari;
+
+        $product = Product::where('name','like',"%".$cari."%")->paginate();
+
+        return view('dashboard.product.index',['product' => $product]);
+    }
     
     /**
      * Show the form for creating a new resource.
@@ -148,8 +156,5 @@ class AdminProductController extends Controller
         
     }
 
-    public function checkSlug(Request $request){
-        $slug = SlugService::createSlug(Product::class, 'slug', $request->name);
-        return response()->json(['slug' => $slug]);
-    }
+    
 }

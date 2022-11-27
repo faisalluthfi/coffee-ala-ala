@@ -131,6 +131,7 @@ Route::get('/dashboard', function(){
 
 Route::prefix('admin/product')->name('admin.product.')->group(function(){
     Route::get('index',[AdminProductController::class,'index'])->name('index');
+    Route::get('index/cari',[AdminProductController::class,'cari'])->name('cari');
     Route::get('create',[AdminProductController::class,'create'])->name('create');
     Route::post('store',[AdminProductController::class,'store'])->name('store');
     Route::get('edit/{id}',[AdminProductController::class,'edit'])->name('edit');

@@ -15,7 +15,8 @@
 
 ## Note
 - jangan lupa seed databasenya
-- untuk admin bisa menggunakan email: <b>admin@gmail.com password: <b>password
+- untuk admin bisa menggunakan email: <b>admin@gmail.com</b> password: <b>password </b>
+- enjoy
 
 ## About Laravel
 

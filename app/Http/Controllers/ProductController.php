@@ -25,10 +25,11 @@ class ProductController extends Controller
     //     $cari 
     // }
 
-    public function cart()
+    public function cart(Category $category)
     {
         return view('cart',[
-            'title' => 'Cart'
+            'title' => 'Cart',
+            'category'=>$category
         ]);
     }
 
