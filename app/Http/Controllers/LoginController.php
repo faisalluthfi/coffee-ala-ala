@@ -22,33 +22,6 @@ class LoginController extends Controller
             "email" => "required|email",
             "password" => "required"
         ]);
-        // if(Auth::attempt($credentials)){
-        //     dd(auth()->user()->is_admin);
-        // } else {
-        //     dd(false);
-        //     }
-
-        // if(auth()->check() && auth()->user()->is_admin==1){
-        //     dd(auth()->user()->is_admin);
-        //     // dd(auth()->user());
-        //     return redirect()->intended('/dashboard.index');
-        // } else {
-        //     return redirect()->intended('/');
-        // }
-        // if(auth()->check()){
-        //     dd(auth()->user());
-        //     return redirect()->intended('/dashboard.index');
-        // } else {
-        //     return redirect()->intended('/');
-        // }
-
-        // if(Auth::attempt($credentials)){
-        //     $request->session()->regenerate();
-
-        //     return redirect()->intended('/dashboard');
-        //     dd($credentials);
-        // }
-
         if(Auth::attempt($credentials)){
             if(auth()->user()->is_admin == 1){
                 return redirect()->intended('/dashboard');
@@ -58,8 +31,6 @@ class LoginController extends Controller
             // arahin ke home
             }
         }
-        
-   
         return back()->with('loginError','Email or Password is Wrong!');
         
     }
